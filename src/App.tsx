@@ -9,13 +9,13 @@ import Menu from "./components/menu/Menu";
 import "./styles/global.scss";
 import User from "./pages/user/User";
 import Product from "./pages/product/Product";
-// import {
-//   QueryClient,
-//   QueryClientProvider,
-// } from "@tanstack/react-query";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
 
 
-// const queryClient = new QueryClient();
+const queryClient = new QueryClient();
 
 function App() {
   const Layout = () => {
@@ -27,9 +27,9 @@ function App() {
             <Menu />
           </div>
           <div className="contentContainer">
-            {/* <QueryClientProvider client={queryClient}> */}
+            <QueryClientProvider client={queryClient}>
               <Outlet />
-            {/* </QueryClientProvider> */}
+            </QueryClientProvider>
           </div>
         </div>
         <Footer />
